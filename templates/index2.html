@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'design.css') }}">
+    <title>cyclists</title>
+</head>
+
+<style>
+     td {text-align: center;}
+     h1 {text-align: center;}
+</style>
+
+<body style="background-color:lightgrey;" >
+    <h1>Insert Cyclist</h1>
+
+    <form method="get" action="submitted2.html">
+        <table class="center">
+            <tr><td> Cyclist ID </td></tr>
+            <tr><td> <input type="text" id="CID" name="CID" style="width: 150px;"></td></tr>
+            <tr><td> Cyclist Name </td></tr>
+            <tr><td> <input type="text" id="Name" name="Name" style="width: 150px;"></td></tr>
+            <tr><td> Cyclist Surname </td></tr>
+            <tr><td> <input type="text" id="Surname" name="Surname" style="width: 150px;"></td></tr>
+            <tr><td> Cyclist Nation </td></tr>
+            <tr><td> <input type="text" id="Nation" name="Nation" style="width: 150px;"></td></tr>
+
+            <tr><td> Team ID </td></tr>
+            <tr><td><select name="TID" style="width: 150px;">
+                {% for team in team %}
+                    <option value="{{ team['TID'] }}"> {{team['TID']}}, {{team['namet']}} </option>
+                {% endfor %}
+                </select> </td></tr>
+                <tr><td> Birth-Year </td></tr>
+            <tr><td><input type="text" id="BirthYear" name="BirthYear" style="width: 150px;"></td></tr>
+            <tr><td><input type="submit" value="Insert" style="width: 150px;" ></td></tr>
+        </table>
+    </form>
+</body>
+</html>
+

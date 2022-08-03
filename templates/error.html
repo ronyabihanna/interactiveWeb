@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'design.css') }}">
+    <title>result</title>
+</head>
+<body style="background-color:lightgrey;">
+    <form method="get" action="index3.html">
+        <table class="center" style="background-color:red; color:white;">
+        <tr><td><h1>Error!</h1></td></tr>
+        <tr><td><p>{% if error_message %}
+            <h3 style="color:white"> {{ error_message}} </h3>
+            {% else %}
+            <h3> the result is: {{ result }} </h3>
+            {% endif %}</p></td></tr>
+        </table>
+    </form>
+    
+</body>
+</html>

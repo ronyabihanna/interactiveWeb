@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'design.css') }}">
+    <title>Results</title>
+</head>
+<body>
+    <table class="center">
+        <tr>
+            {% for col in header %}
+            <th style="font-size:30px"> {{col}} </th>
+            {% endfor %}
+        </tr>
+        {% for data in values %}
+            <tr>
+                <td style="font-size:30px">{{data["name"]}}</td>
+                <td style="font-size:30px">{{data["surname"]}}</td>
+                <td style="font-size:30px">{{data["namet"]}}</td>
+                <td style="font-size:30px">{{data["tid"]}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

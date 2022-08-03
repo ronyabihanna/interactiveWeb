@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'design.css') }}">
+    <title>cyclists</title>
+</head>
+
+<style>
+     td {text-align: center;}
+     h1 {text-align: center;}
+</style>
+
+<body style="background-color:lightgrey;" >
+    <h1>Insert Cyclist Position</h1>
+
+    <form method="get" action="submitted3.html">
+        <table class="center">
+
+        <tr><td> Cyclist ID </td></tr>
+        <tr><td><select name="CID" style="width: 150px;">
+            {% for rank in cyclist %}
+                <option value="{{ rank['CID'] }}"> {{rank['CID']}} </option>
+            {% endfor %}
+            </select> </td></tr>
+
+        <tr><td> Stage ID </td></tr>
+        <tr><td><select name="SID" style="width: 150px;">
+            {% for rank in stage %}
+                <option value="{{ rank['SID'] }}"> {{rank['SID']}} </option>
+            {% endfor %}
+            </select> </td></tr>
+
+        <tr><td> Edition </td></tr>
+        <tr><td><select name="Edition" style="width: 150px;">
+            {% for rank in edition %}
+                <option value="{{ rank['Edition'] }}"> {{rank['Edition']}} </option>
+            {% endfor %}
+            </select> </td></tr>
+
+        <tr><td> Cyclist Position </td></tr>
+        <tr><td> <input type="number" id="cyclist_position" name="cyclist_position" min="1" max="20" style="width: 150px;"></td></tr>
+
+        <tr><td><input type="submit" value="Insert" style="width: 150px;"></td></tr>
+    </table>
+        </form>
+</body>
+</html>
+
